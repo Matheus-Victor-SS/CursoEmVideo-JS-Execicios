@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc3</title>
+    <style>
+        body{
+            font: normal 25pt Arial;
+            background-color: rgb(14, 63, 36);
+            color: rgb(228, 228, 228);
+        }
+        #Doc{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h">DOM</h1>
+    <div id="Doc">Document Object Model</div>
+    <div name="Mapa">Aqui vai issooo</div>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a manipular o <strong>DOM</strong> em Javascript</p>
+    <div>Clique em mim</div>
+    <script>
+        //mudando o ID escrevendo ele e embaixo mudando a cor
+        var n1 = window.document.getElementById('Doc')
+        window.document.write(n1.innerText)
+        n1.style.color = 'yellow'
+        //background
+        document.body.style.backgroundColor=''
+        /*mudando por nome o aqui vai isso
+        var d = document.getElementsByName('Mapa')[0]
+        d.innerText='Aqui vai aquilo'
+        */
+       //selecionando pelo Querry
+        var d = window.document.querySelector('div#Doc')
+        var e = window.document.getElementById('h')
+        e.style.color='Orange'
+        d.style.color='yellow'
+    </script>
+</body>
+</html>

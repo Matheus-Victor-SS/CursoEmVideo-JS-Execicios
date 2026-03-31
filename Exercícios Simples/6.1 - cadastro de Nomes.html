@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Nomes</title>
+    <style>
+        body{
+            background-color: lightblue;
+            color: steelblue;
+            font: normal 12pt Verdana;
+            border-top: 30px;
+            margin-top: 30px;
+        }
+        h1{
+            margin-top: 30px;
+            color: blue;
+        }
+        div{
+            margin-top: 30px;
+            background-color: lightskyblue;
+            border-radius: 50px;
+            border-top: 30px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        input{
+            background-color: lightblue;
+            border-color: transparent;
+            border-radius: 30px;
+            font-size: 20px;
+            width: 200px;
+            height: 30px;
+        }
+        #btn1{
+            background-color: rgb(117, 255, 136);
+            color: azure;
+            border-color: transparent;
+            border-radius: 30px;
+            width: 100px;
+            font: bold 15pt Verdana;
+            font-size: 15px;
+            height: 30px;
+        }
+        #btn2{
+            background-color: rgb(255, 69, 56);
+            color: azure;
+            border-color: transparent;
+            font: bold 15pt Verdana;
+            font-size: 15px;
+            border-radius: 30px;
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <br>
+    <center><h1>CADASTRO DE NOMES</h1>
+    <p>Escreva os nomes desejados abaixo: </p><br>
+    <input type="text" name="nome" id="nome"><br><br>
+    <input type="button" value="ENVIAR" id="btn1" onclick="clique()">
+    <input type="button" value="LIMPAR" id="btn2" onclick="limpar()">
+    <br><br><br>
+</div>
+<center><br><p id="list">-</p></center>
+
+    <script>
+        var ln = []//array, lista de nomes
+        var lista = document.getElementById("list")//interliga HTML
+        var b1 = document.getElementById('btn1')//pega a localização dos botões
+        var b2 = document.getElementById('btn2')
+
+        b1.addEventListener('mouseenter', dentro)//eventos de botão
+        b1.addEventListener('mouseout', fora)
+        b2.addEventListener('mouseenter', dentro)
+        b2.addEventListener('mouseout', fora)
+
+                //Carregando o banco quando ele for aberto
+window.onload = function () {
+    const dados = localStorage.getItem("list");
+    if (dados) {
+        ln = JSON.parse(dados); // transforma de string → array
+        if (!ln || ln.constructor !== Array) {//para garantir que é uma array, senao for 
+            //ele acaba resetando e tentando denovo
+            ln = [];
+        }
+    }
+        lista.innerText = ln.join('\n'); // mostra na tela pulando linha
+}
+
+//salvar banco de dados
+function salvarBanco(){
+    //salva no banco local do navegador, mas converte e salva a lista como uma string
+    localStorage.setItem("list", JSON.stringify(ln));
+}
+
+        function clique(){
+            var name = document.getElementById('nome')//interliga HTML
+            var n = String(name.value)//tranforma em string
+
+            if(ln.includes(n)){
+                alert("Nome ja digitado!")
+            }
+            else{
+                ln.push(n)//puxa para dentro da array, push e pop para tirar
+                lista.innerText=ln.join('\n')//.join('\n') serve para colocar cada nome em uma linha
+            }
+            salvarBanco();
+        }
+
+        function limpar(){
+            if (ln.length >= 1) { //se nao estiver vazia, limpa a array e o HTML
+                lista.innerText=''
+                ln=[]
+            }
+            else{
+                alert('A lista já esta vazia')
+            }
+            salvarBanco();
+        }
+        function dentro(event){
+            //muda o botão que acionou o evento
+            event.target.style.backgroundColor='rgb(207, 207, 207)'
+            event.target.style.height='35px'
+        }
+        function fora(event){
+            //remove os estilos
+            event.target.style.backgroundColor=''
+            event.target.style.height=''
+        }
+    </script>
+</body>
+</html>

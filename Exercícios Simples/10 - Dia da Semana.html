@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc10</title>
+    <style>
+        body{
+            background-color: greenyellow;
+        }
+        #cont{
+            background-color: green;
+            margin-top: 300px;
+            /* padding é a margem interna */
+            padding-top: 10px;
+            border-radius: 25px;
+            width: 50%;
+            height: 150px;
+        }
+        #cont:hover{
+            /* aumenta o container ao passar o mouse */
+            transform: scale(1.02); 
+        }
+        h1{
+            color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div id="cont">
+    <h1>DIA DA SEMANA</h1>
+    <p>Hoje é:</p>
+    <strong><p id="res"></p></strong>
+    </div>
+    </center>
+    
+    <script>
+        var agora = new Date()
+        var diaS = agora.getDay()
+        var res = document.getElementsByTagName('p')[1]
+        var cont = document.getElementById('cont')
+        //Domingo - 0
+        //Segunda - 1
+        //Terça - 2
+
+        //switch somente numeros int e strings, nao serve para intervalos
+        switch(diaS){
+            case 0: 
+                res.innerHTML +=`<p>DOMINGO!</p>`
+                document.body.style.backgroundColor="#7a60da"
+                cont.style.backgroundColor='#4f36a8'     
+            break
+            case 1: 
+                res.innerHTML +=`<p>SEGUNDA!</p>`
+                document.body.style.backgroundColor="#c75757"
+                cont.style.backgroundColor='#af4040'
+            break
+            case 2: 
+                res.innerHTML +=`<p>TERÇA!</p>`
+                document.body.style.backgroundColor="#cf924b"
+                cont.style.backgroundColor='#b67428'
+            break
+            case 3: 
+                res.innerHTML +=`<p>QUARTA!</p>`
+                document.body.style.backgroundColor="#d3ca50"
+                cont.style.backgroundColor='#b6ab13'
+            break
+            case 4: 
+                res.innerHTML +=`<p>QUINTA!</p>`
+                document.body.style.backgroundColor="#79cf3f"
+                cont.style.backgroundColor='#5bb61e'
+            break
+            case 5: 
+                res.innerHTML +=`<p>SEXTA!</p>`
+                document.body.style.backgroundColor="#4dd39b"
+                cont.style.backgroundColor='#23b87a'
+            break
+            case 6: 
+                res.innerHTML +=`<p>SABÁDO!</p>`
+                document.body.style.backgroundColor="#4ba1d3"
+                cont.style.backgroundColor='#1b7cb4'
+            break
+            default:
+                res.innerHTML +=`<p>ERRO!</p>`
+        }
+    </script>
+</body>
+</html>

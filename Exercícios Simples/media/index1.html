@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio1</title>
+</head>
+<body>
+    <input type="number" id="nota1" placeholder="Digite a primeira nota">
+    <input type="number" id="nota2" placeholder="Digite a segunda nota">
+    <input type="number" id="nota3" placeholder="Digite a terceira nota">
+    <input type="number" id="nota4" placeholder="Digite a quarta nota">
+    <input type="number" id="nota5" placeholder="Digite a quinta nota">
+    <p id="resultado"></p>
+    <button onclick="PegarValor()">Enviar</button>
+
+    <script>
+        function PegarValor(){
+            var N1 = Number(document.getElementById("nota1").value);
+            var N2 = Number(document.getElementById("nota2").value);
+            var N3 = Number(document.getElementById("nota3").value);
+            var N4 = Number(document.getElementById("nota4").value);
+            var N5 = Number(document.getElementById("nota5").value);
+            if (N1 >= 0 && N2 >= 0 && N3 >= 0 && N4 >= 0 && N5 >= 0){
+                var Media=(N1+N2+N3+N4+N5)/5;
+ document.getElementById("resultado").innerText =
+            `A média final é ${Media.toFixed(2)}`;
+            }
+            else{
+                alert("Numeros inválidos!")
+            }
+        }
+    </script>
+</body>
+</html>

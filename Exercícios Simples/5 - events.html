@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        /* # serve para um ID e . serve para uma Classe */
+        div#area{
+            background-color: rgb(25, 117, 40);
+            color: rgb(255, 255, 255);
+            font: normal 20pt arial
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- id que mechemos -->
+    <div id="area">
+        Interaja...
+    </div>
+    <script>
+        //interliga o HTML com o JS
+        var a = document.getElementById('area')
+        //Cria os eventos(ação, nome da função chamada)
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', mouse)
+        a.addEventListener('mouseout', mousefora)
+
+        function clicar(){
+            a.innerText='Ai papai'
+            a.style.background='orange'
+            a.style.font='normal 50pt arial'
+        }
+        function mouse(){
+            a.innerText='Tira a mão de mim'
+            a.style.backgroundColor='red'
+            a.style.color='black'
+            a.style.font='normal 35pt arial'
+        }
+        function mousefora(){
+            a.innerText='Obrigado'
+            a.style.backgroundColor='rgb(57, 255, 90)'
+            a.style.color='rgb(24, 82, 36)'
+            a.style.font='normal 25pt arial'
+        }
+    </script>
+</body>
+</html>

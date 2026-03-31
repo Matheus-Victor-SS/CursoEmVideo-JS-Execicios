@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição 2</title>
+    <style>
+        body{
+            background-color: lightseagreen;
+            font: normal 25pt Verdana;
+        }
+        h1{
+            color: green;
+        }
+        input{
+            width: 300px;
+            height: 50px;
+            border-radius: 30px;
+            border-color: transparent;
+            background-color: rgb(243, 243, 243);
+        }
+        #btn{
+            background-color: yellow;
+            border-color: goldenrod ;
+            width: 150px;
+            font: normal 15pt Arial;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>VOTO OU NÃO?</h1>
+    <p>Insira a sua idade para saber se vota ou não:</p>
+    <input type="number" name="ida" id="ida"><br>
+    <input type="button" value="Verificar" id="btn" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar(){
+            var idade=document.getElementById('ida')
+            var res=document.getElementById('res')
+            var voto=Number(idade.value)
+            res.innerHTML=`<p>Você tem <strong>${voto} anos</strong> de idade</p>`
+            if(voto<16){
+                res.innerHTML+=`<p>Você não tem idade para votar ainda!</p>`
+            }
+            else if(voto<18){
+                res.innerHTML+=`<p>Você pode votar se quiser!</p>`
+            }
+            else{
+                res.innerHTML+=`<p>Você é OBRIGADO a votar ja!</p>`
+            }
+        }
+    </script>
+</body>
+</html>

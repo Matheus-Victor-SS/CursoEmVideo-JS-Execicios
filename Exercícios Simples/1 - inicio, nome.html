@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc1</title>
+</head>
+<body>
+    <!-- Comentário em HTML -->
+    <h1>Olá Mundo</h1>
+    <p>Seja bem vindo meu querido:</p>
+    <h2 id="nom">Nome</h2>
+    <style>
+        /* Comentario em CSS */
+        body{
+            background-color: beige;
+            color: brown;
+            font: normal 25px Arial;
+        }
+        h1{
+            color: rgba(75, 35, 12, 0.938);
+        }
+    </style>
+    <script>
+        // Comentário em JS
+        var nome = window.prompt('Qual o seu nome? ')
+        var novo = document.getElementById("nom")
+        //Substitui o antigo pelo novo
+        novo.innerHTML=nome
+    </script>
+</body>
+</html>

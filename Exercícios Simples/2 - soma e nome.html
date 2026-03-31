@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc2</title>
+</head>
+<body>
+    <!-- Comentário em HTML -->
+    <h1>Olá Mundo</h1>
+    <div id="p">Seja bem vindo</div>
+    <div id="nom">Nome</div><br>
+    <div id="q">O resultado da soma é:</div>
+    <h2 id="num">Soma</h2>
+    <style>
+        /* Comentario em CSS */
+        body{
+            background-color: beige;
+            color: brown;
+            font: normal 25px Arial;
+        }
+        h1{
+            color: rgba(75, 35, 12, 0.938);
+        }
+        #p, #nom{
+            display: inline-block;
+            vertical-align: top;
+            width: 29%;
+        }
+    </style>
+    <script>
+        // Comentário em JS
+        //parseInt()
+        //Number()
+        //String()
+        var nome = window.prompt('Digite seu nome: ')
+        var n1 = Number(window.prompt('Digite um número: '))
+        var n2 = parseFloat(window.prompt('Digite outro numero: '))
+        //ele esta somando strings
+        var soma = n1+n2
+        window.alert(`O resultado da soma dos números é: ${soma}`)
+        var r = document.getElementById('num')
+        r.innerHTML=soma
+
+        var novo = document.getElementById('nom')
+
+        //Substitui o antigo pelo novo
+        novo.innerHTML=nome
+    </script>
+</body>
+</html>

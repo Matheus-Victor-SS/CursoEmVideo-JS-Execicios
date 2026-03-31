@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1>Verificador de idade</h1> 
+    </header>
+    <section>
+        <div>
+    <p>Ano de nascimento:<br>
+        <input type="number" id="year" min="0">
+    </p>   
+    <p>Sexo:
+        <!-- Precisa ter o msm name para nao marcar ambas -->
+        <input type="radio" name="radsex" id="masc" checked>
+        <label for="masc">Masculino</label>
+        <input type="radio" name="radsex" id="fem">
+        <label for="fem">Feminino</label>
+    </p>
+    <input type="button" value="Buscar" id="btn" onclick="verificar()">
+    </div>
+    <div>
+        <p id="res">Preencha os dados para ver o resultado</p>
+    </div>
+    </section>
+    <footer>
+        Matheus V.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
