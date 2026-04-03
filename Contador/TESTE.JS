@@ -1,0 +1,10 @@
+x=5
+y=5
+if(y>5){
+    x=x+y
+}if(x>20){
+    x=x-5
+}else{
+    x=x*2
+}
+console.log(x)
