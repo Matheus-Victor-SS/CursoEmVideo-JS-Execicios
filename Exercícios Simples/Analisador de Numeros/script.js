@@ -1,5 +1,4 @@
 var lista = []
-
 function analisar(){
 var res = document.getElementById('res')
 var num = document.getElementById('num')
@@ -16,11 +15,13 @@ res.innerHTML =`O valores são:<br><br>`
 }else{
     lista.push(Number(num.value))
     res.style.color='black'
+    //limpa o campo ao enviar e ja foca nele denovo
     num.value=''
     num.focus()
+    res2.innerHTML = ''
     for(pos in lista){
         res2.innerHTML += (`O número ${lista[pos]} foi inserido<br>`)
-        pos++
+    pos++
 }
 }
 }
@@ -41,7 +42,7 @@ function finalizar(){
         //.at(-1) pega o ultimo valor da array
         final.innerHTML+=`O maior valor informado foi ${lista.at(-1)}.<br><br>`
         final.innerHTML+=`Somando todos os valores, temos ${soma}.<br><br>`
-        final.innerHTML+=`A média dos valores digitados foi ${soma/lista.length}.<br><br>`
+        final.innerHTML+=`A média dos valores digitados foi ${soma/lista.length.toFixed(2)}.<br><br>`
 
     }
 
